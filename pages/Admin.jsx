@@ -23,8 +23,12 @@ function Admin() {
     }
     function UploadFirebaseStorage (e) {
         e.preventDefault()
-        uploadIMG(file)
-        downloadIMG(setUserImage)
+        if(file !== false){
+            uploadIMG(file)
+            downloadIMG(setUserImage)
+        }else{
+            setUserSuccess(false)
+        }
     }
     function nav(e) {
         e.preventDefault()
@@ -53,7 +57,7 @@ function Admin() {
                     <button className={style.logout} onClick={signOut}>Cerrar Sesión</button>
                 </div>
                 <br />
-                  {success == 'save' && <Success>Correcto</Success>}
+                  {success == 'false' && <Error>Seleccione un archivo</Error>}
         </div>
     )
 }
