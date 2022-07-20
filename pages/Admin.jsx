@@ -46,16 +46,16 @@ function Admin() {
         <div className={style.container}>
                 <br />
                 <form className={style.form} onSubmit={UploadFirebaseStorage}>
-                    <input type="file"  onChange={fileHandler} accept="images" />
+                    <input type="file" className={style.inputFile} onChange={fileHandler} accept="images" />
                     <button className={style.add}>subir img</button> 
                 </form>
                 <div className={style.imgContainer}>
                     <p>Imagen Actual</p>
                     <img src={image} alt="" className={style.img}/>
                 </div><br />
-                <div>
-                    <button className={style.logout} onClick={nav}>Pag Principal</button>
+                <div className={style.buttonsContainer}>
                     <button className={style.logout} onClick={signOut}>Cerrar Sesión</button>
+                    <button className={style.nav} onClick={nav}>Pag Principal</button>
                 </div>
                 <br />
                   {success == false && <Error>Seleccione un archivo</Error>}

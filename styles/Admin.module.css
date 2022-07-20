@@ -11,6 +11,7 @@
 
   text-align: center;
 }
+
 .form {
   display: flex;
 }
@@ -42,13 +43,23 @@
   max-width: 100% ;
   border-radius: 5px;
 }
-.logout {
+
+
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+  padding: 0px 15px;
+}
+.nav {
   position: relative;
 
   cursor: pointer;
   font-size: 14px;
 
-  width: 180px;
+  width: 48%;
+  max-width: 180px;
   margin-top: 10px;
   padding: 10px 1px;
   border-radius: 10px;
@@ -59,9 +70,32 @@
   border: 1px solid white;
 }
 
-.logout:hover {
+.nav:hover {
   color: #003450;
   background-color: white;
   border: 1px solid #024164;
+}
+.logout {
+  position: relative;
+
+  cursor: pointer;
+  font-size: 14px;
+
+  width: 48%;
+  max-width: 180px;
+  margin-top: 10px;
+  padding: 10px 1px;
+  border-radius: 10px;
+
+  transition-duration: .5s;
+  color: #003450;
+  background-color: white;
+  border: 1px solid #024164;
+}
+
+.logout:hover {
+  color: white;
+  background-color: #ff0101;
+  border: 1px solid white;
 }
 
