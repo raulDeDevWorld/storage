@@ -47,7 +47,7 @@ function Admin() {
                 <br />
                 <form className={style.form} onSubmit={UploadFirebaseStorage}>
                     <input type="file" className={style.inputFile} onChange={fileHandler} accept="images" />
-                    <button className={style.add}>subir img</button> 
+                    <button className={style.add}>Update</button> 
                 </form>
                 <div className={style.imgContainer}>
                     <p>Imagen Actual</p>
