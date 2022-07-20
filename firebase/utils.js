@@ -81,9 +81,9 @@ function handleSignOut () {
 }
 
 
-function uploadIMG (file) {
+function uploadIMG (file, setUserImage) {
   uploadBytes(imagesRef, file).then((snapshot) => {
-    console.log('Uploaded a blob or file!');
+    downloadIMG(setUserImage)
   }).catch(e=>console.log('Uploaded a blob or file!'));
 }
 

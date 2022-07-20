@@ -24,8 +24,8 @@ function Admin() {
     function UploadFirebaseStorage (e) {
         e.preventDefault()
         if(file !== false){
-            uploadIMG(file)
-            downloadIMG(setUserImage)
+            uploadIMG(file, setUserImage)
+            setUserSuccess(true)
         }else{
             setUserSuccess(false)
         }
@@ -38,9 +38,10 @@ function Admin() {
         e.preventDefault()
         handleSignOut()
     }
+    console.log(success)
     useEffect(() => {
         image==null ? downloadIMG(setUserImage): ''
-      }, [image]);
+      }, [image, success]);
     return (
         <div className={style.container}>
                 <br />
@@ -57,7 +58,8 @@ function Admin() {
                     <button className={style.logout} onClick={signOut}>Cerrar Sesión</button>
                 </div>
                 <br />
-                  {success == 'false' && <Error>Seleccione un archivo</Error>}
+                  {success == false && <Error>Seleccione un archivo</Error>}
+                  {success == true && <Success>Cargando...</Success>}
         </div>
     )
 }
