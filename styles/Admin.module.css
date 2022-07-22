@@ -3,6 +3,7 @@
   height: 100vh;
   min-height: 360px;
   width: 100vw;
+  padding: 70px 0px;
   background-color: #024164;
 
   display: flex;
