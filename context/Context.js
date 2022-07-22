@@ -29,7 +29,7 @@ export function UserProvider ({ children }) {
 	}
 	function setUserSuccess (mode) {
 		setSuccess(mode)
-		setTimeout(()=>{ setSuccess(null)}, 4000)
+		setTimeout(()=>{ setSuccess(null)}, 6000)
 	}
 
 	const value = useMemo(()=>{

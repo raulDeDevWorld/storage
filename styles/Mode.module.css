@@ -11,7 +11,7 @@
     text-align: center;
     transition-duration: .5s;
     animation-name: animationGreen;
-    animation-duration: 4s;
+    animation-duration: 6s;
     animation-delay: 0;
     z-index: 1000000000000;
     padding: 1px 0;
@@ -31,7 +31,7 @@
     text-align: center;
 
     animation-name: animationRed;
-    animation-duration: 4s;
+    animation-duration: 6s;
     animation-delay: 0;
     z-index: 1000000000000;
     padding: 1px 0;

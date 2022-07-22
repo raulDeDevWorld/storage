@@ -81,10 +81,11 @@ function handleSignOut () {
 }
 
 
-function uploadIMG (file, setUserImage) {
+function uploadIMG (file, setUserImage, setUserSuccess) {
   uploadBytes(imagesRef, file).then((snapshot) => {
     downloadIMG(setUserImage)
-  }).catch(e=>console.log('Uploaded a blob or file!'));
+    setUserSuccess('success')
+  }).catch(e=> setUserSuccess('error'));
 }
 
 
