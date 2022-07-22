@@ -1,8 +1,8 @@
 export const firebaseConfig = {
-  apiKey: "AIzaSyCeD37yQUJLFcDvf1z05c68JyXsQ_J2Jz4",
-  authDomain: "storage-d16ec.firebaseapp.com",
-  projectId: "storage-d16ec",
-  storageBucket: "storage-d16ec.appspot.com",
-  messagingSenderId: "384558614163",
-  appId: "1:384558614163:web:c928942d97ea629bf42f66"
+  apiKey: "AIzaSyBsGufs7Pe4EbyjjtlNoc2p_pPYeNq8fBM",
+  authDomain: "images-bb816.firebaseapp.com",
+  projectId: "images-bb816",
+  storageBucket: "images-bb816.appspot.com",
+  messagingSenderId: "728179687078",
+  appId: "1:728179687078:web:7797dcd93475ea88bc3e67"
 };

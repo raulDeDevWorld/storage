@@ -1,4 +1,4 @@
-import { handleSignOut, uploadIMG, downloadIMG} from '../firebase/utils'
+import { handleSignOut, uploadIMG, downloadIMG } from '../firebase/utils'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
@@ -16,17 +16,17 @@ function Admin() {
 
     const router = useRouter()
 
-    function fileHandler (e) {
+    function fileHandler(e) {
         e.preventDefault()
         const data = e.target.files[0]
         setFile(data)
     }
-    function UploadFirebaseStorage (e) {
+    function UploadFirebaseStorage(e) {
         e.preventDefault()
-        if(file !== false){
+        if (file !== false) {
             uploadIMG(file, setUserImage)
             setUserSuccess(true)
-        }else{
+        } else {
             setUserSuccess(false)
         }
     }
@@ -40,26 +40,27 @@ function Admin() {
     }
     console.log(success)
     useEffect(() => {
-        image==null ? downloadIMG(setUserImage): ''
-      }, [image, success]);
+        image == null ? downloadIMG(setUserImage) : ''
+    }, [image, success]);
     return (
         <div className={style.container}>
-                <br />
-                <form className={style.form} onSubmit={UploadFirebaseStorage}>
-                    <input type="file" className={style.inputFile} onChange={fileHandler} accept="images" />
-                    <button className={style.add}>Actualizar</button> 
-                </form>
+            {success == false && <Error>Seleccione un archivo</Error>}
+            {success == true && <Success>Cargando...</Success>}
+            <form className={style.form} onSubmit={UploadFirebaseStorage}>
+                <input type="file" className={style.inputFile} onChange={fileHandler} accept="images" />
+                <button className={style.add}>Actualizar</button>
+            </form>
+            <div>
+                <p className={style.text}>Imagen Actual</p>
                 <div className={style.imgContainer}>
-                    <p>Imagen Actual</p>
-                    <img src={image} alt="" className={style.img}/>
-                </div><br />
-                <div className={style.buttonsContainer}>
-                    <button className={style.logout} onClick={signOut}>Cerrar Sesión</button>
-                    <button className={style.nav} onClick={nav}>Pag Principal</button>
+                    <img src={image} alt="" className={style.img} />
                 </div>
-                <br />
-                  {success == false && <Error>Seleccione un archivo</Error>}
-                  {success == true && <Success>Cargando...</Success>}
+            </div>
+            
+            <div className={style.buttonsContainer}>
+                <button className={style.logout} onClick={signOut}>Cerrar Sesión</button>
+                <button className={style.nav} onClick={nav}>Pag Principal</button>
+            </div>
         </div>
     )
 }
