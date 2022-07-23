@@ -21,11 +21,11 @@ export default function Modal (props) {
                     <h4>Config Web Page</h4>
                     <label>
                         Color:
-                        <input className={style.input} type="text" placeholder="#024164" defaultValue={`${props.userDB.color}`}/>
+                        <input className={style.input} type="text" placeholder="#024164" defaultValue={`${props.userDB.color == undefined ? '' : props.userDB.color}`}/>
                     </label>
                     <label>
                         WhatsApp:
-                        <input className={style.input} type="text" placeholder="https://api.whatsapp.com/send?phone=73447725&text=Hola%20mundo" defaultValue={`${props.userDB.whatsapp}`}/>
+                        <input className={style.input} type="text" placeholder="https://api.whatsapp.com/send?phone=73447725&text=Hola%20mundo" defaultValue={`${props.userDB.whatsapp == undefined ? '' : props.userDB.whatsapp}`}/>
                     </label>
                     <Button style='buttonPrimary' click={save}>Guardar</Button>
                 </form>
