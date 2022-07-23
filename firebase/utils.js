@@ -84,7 +84,7 @@ function handleSignOut () {
 function uploadIMG (file, setUserImage, setUserSuccess) {
   uploadBytes(imagesRef, file).then((snapshot) => {
     downloadIMG(setUserImage)
-    setUserSuccess('success')
+    setUserSuccess(true)
   }).catch(e=> setUserSuccess('error'));
 }
 

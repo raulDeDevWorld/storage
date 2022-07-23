@@ -45,9 +45,8 @@ function Admin() {
     return (
         <div className={style.container}>
             {success == false && <Error>Seleccione un archivo</Error>}
-            {success == true && <Success>Cargando...</Success>}
+            {success == true && <Success>Actualizando...</Success>}
             {success == 'error' && <Error>ERROR! intentelo otra vez...</Error>}
-            {success == 'success' && <Success>Cargado exitosamente</Success>}
             <form className={style.form} onSubmit={UploadFirebaseStorage}>
                 <input type="file" className={style.inputFile} onChange={fileHandler} accept="images" />
                 <button className={style.add}>Actualizar</button>
