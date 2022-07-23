@@ -6,17 +6,16 @@ import { onAuth } from '../firebase/utils'
 
 export function WithoutAuth(Component) {
     return () => {
-        const { user, setUserProfile } = useUser()
-        const router = useRouter()
+        const { user, setUserProfile, setUserData } = useUser()
+
         useEffect(() => {
-          onAuth(setUserProfile)
-          if (user) router.replace('/Admin')
+            onAuth(setUserProfile, setUserData)
         }, [user]);
 
         return (
             <>
                 {user === undefined && <Loader />}
-                {user === null && <Component {...arguments} />}
+                 <Component {...arguments} />
             </>
         )
     }

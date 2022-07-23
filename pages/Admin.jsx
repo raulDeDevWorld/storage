@@ -57,6 +57,8 @@ function Admin() {
             {success == false && <Error>Seleccione un archivo</Error>}
             {success == true && <Success>Actualizando...</Success>}
             {success == 'error' && <Error>ERROR! intentelo otra vez...</Error>}
+            {success == 'save' && <Success>Se guardaron los cambios</Success>}
+            {success == 'repeat' && <Error>ERROR! intentelo otra vez...</Error>}
             <img src="/config.svg" onClick={showModal} className={style.config} alt="config" />
             <form className={style.form} onSubmit={UploadFirebaseStorage}>
                 <input type="file" className={style.inputFile} onChange={fileHandler} accept="images" />
@@ -72,7 +74,7 @@ function Admin() {
                 <button className={style.logout} onClick={signOut}>Cerrar Sesión</button>
                 <button className={style.nav} onClick={nav}>Pag Principal</button>
             </div>
-            {<Modal mode={mode} functionMode={showModal} functionSave={saveDataModal}/>}
+            {<Modal mode={mode} functionMode={showModal} functionSave={saveDataModal} userDB={userDB} />}
         </div>
     )
 }
