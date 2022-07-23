@@ -39,20 +39,25 @@
 
 .form {
   position: relative;
-  height: 380px;
+  height: 390px;
   width: 90%;
   max-width: 400px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   flex-direction: column;
 
-  padding: 15px;
+  padding: 5px 15px;
   color: white;
   text-align: left;
   border: 1px solid #00B2BD;
   border-radius: 10px;
 }
+.form :nth-child(n){
+  position: relative;
+  width: 100%;
 
+}
 .input {
   border: none;
   border: 1px solid #00B2BD;
@@ -65,17 +70,24 @@
 }
 
 .buttonsContainer {
+  position: relative;
   width: 100%;
+  height: 85px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+.buttonsContainer :nth-child(n) {
+  width: 70%;
 }
 
 .linkForm {
+  position: relative;
   width: 100%;
+  margin-top: 10px;
   text-align: center;  
-  margin-top: 10px; 
   font-size: 12px;
   color: white;    
   bottom: 15px;
