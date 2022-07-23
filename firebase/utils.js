@@ -1,11 +1,7 @@
-import { initializeApp } from 'firebase/app';
-import { firebaseConfig } from './config'
+import { app } from './config'
 import { onAuthStateChanged, getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut  } from "firebase/auth";
-import { getApp } from "firebase/app";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
-// import { getDatabase, ref, onValue, set, child, get, remove} from "firebase/database";
-
-const app = initializeApp(firebaseConfig)
+import { getData } from './database'
 
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
@@ -17,8 +13,10 @@ function onAuth(setUserProfile, setUserData) {
   return onAuthStateChanged(auth, (user) => {
     if (user) {
       setUserProfile(user)
+      getData(setUserData)
     } else {
       setUserProfile(user)
+      getData(setUserData)
     }
   });
 }
@@ -80,7 +78,7 @@ function handleSignOut () {
 });
 }
 
-
+//--------------------------- Firebase Storage ---------------------------
 function uploadIMG (file, setUserImage, setUserSuccess) {
   uploadBytes(imagesRef, file).then((snapshot) => {
     downloadIMG(setUserImage)
@@ -98,6 +96,6 @@ function downloadIMG (setUserImage) {
 
   });
 }
-
+//--------------------------- Firebase database ---------------------------
 
 export { onAuth, signUpWithEmail, signInWithEmail, withGoogle, handleSignOut, uploadIMG, downloadIMG }

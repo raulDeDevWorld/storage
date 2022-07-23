@@ -6,14 +6,15 @@ import style from '../styles/Home.module.css'
 
 export default function Home() {
 
-  const { image, setUserImage } = useUser()
+  const { userDB, image, setUserImage } = useUser()
 
   useEffect(() => {
     image == null ? downloadIMG(setUserImage): ''
   }, [image]);
   return (
-    <>
+    <div style={{  backgroundColor: `${userDB.color}`, minHeight: "100vh"}}>
     {image == null ? <Loader /> : <img src={image} className={style.img} alt="img" />}
-    </> 
+    {userDB && <img src="/whatsapp.svg" className={style.whatsapp} alt="Whatsapp" />}
+    </div> 
   )
 }
