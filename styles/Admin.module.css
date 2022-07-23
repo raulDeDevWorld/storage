@@ -3,7 +3,7 @@
   height: 100vh;
   min-height: 360px;
   width: 100vw;
-  padding: 70px 15px;
+  padding: 70px 0px;
   background-color: #024164;
 
   display: flex;
@@ -13,7 +13,7 @@
 }
 
 .form {
-  width: 100%;
+  width: 92%;
   max-width: 450px;
   height: auto;
 
@@ -66,13 +66,13 @@
   bottom: 0;
   margin: auto;
   max-height: 100%;
-  max-width: 90% ;
+  max-width: 92% ;
   border-radius: 5px;
 }
 
 
 .buttonsContainer {
-  width: 100%;
+  width: 92%;
   max-width: 450px;
 
   display: flex;
