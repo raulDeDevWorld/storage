@@ -15,7 +15,7 @@ import style from '../styles/Admin.module.css'
 function Admin() {
     const { user, userDB, setUserData, setUserSuccess, image, setUserImage, success } = useUser()
     const [file, setFile] = useState(false)
-    const [mode, setMode] = useState(true)
+    const [mode, setMode] = useState(false)
 
     const router = useRouter()
 
